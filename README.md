@@ -1,4 +1,6 @@
-Nursing Home Fall Risk Monitor (MFS) — Real-Time Streaming
+# Nursing Home Fall Risk Monitor (MFS) — Real-Time Streaming
+
+## By Albert Kabore
 
 A real-time monitoring pipeline for a 30-resident nursing home that computes Morse Fall Scale (MFS) risk, raises alerts, and orchestrates hourly rounding for nurses & CNAs.
 Events stream over Kafka. The consumer renders one live Matplotlib figure:
