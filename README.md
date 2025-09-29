@@ -136,16 +136,24 @@ Each message is a single resident snapshot:
 }
 ```
 
-Morse Fall Scale (MFS) points
+## Morse Fall Scale (MFS) points
+
 Item	Options → Points
+
 History of falling	Yes → 25, No → 0
+
 Secondary diagnosis	Yes → 15, No → 0
+
 Ambulatory aid	none/bedrest/wheelchair → 0; crutches/cane/walker → 15; furniture → 30
+
 IV / Heparin lock	Yes → 20, No → 0
+
 Gait/Transferring	normal/bedrest/wheelchair → 0; weak → 10; impaired → 20
+
 Mental status	forgets limitations / overestimates ability → 15; oriented → 0
 
 Buckets: LOW < 25, MODERATE 25–44, HIGH ≥ 45.
+
 Normalized risk: MFS / 125 (shown on bars).
 
 The consumer prefers full MFS when present; if partial, it computes a conservative risk from available drivers (see consumers/risk.py).
@@ -159,9 +167,10 @@ Time Watch: Local time, current 8-hour shift (Day 07–15, Evening 15–23, Nigh
 Rounding: For the latest slot, shows unit + role + staff + residents.
 
 Recent alerts: ALERT HIGH (≥45) and ALERT WATCH (25–44) with concise drivers, e.g.:
+
 ALERT HIGH — Paul King (0.64) — history_fall/secondary_dx/gait=weak
 
-Customization
+### Customization
 
 Right panel width: edit PANEL_LEFT in consumers/event_consumer.py
 (smaller value = wider panel; e.g., 0.58).
