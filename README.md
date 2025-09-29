@@ -46,24 +46,25 @@ One live figure updating in real time.
 
 Repository layout
 .
-├─ producers/
-│  ├─ event_producer.py      # streams synthetic resident events (JSON)
-│  ├─ generators.py          # synthetic data + MFS helpers
-│  ├─ roster.py              # 30 residents + unit assignments
-│  └─ config.py              # reads .env for producer
-├─ consumers/
-│  ├─ event_consumer.py      # real-time UI (single figure)
-│  ├─ mfs.py                 # MFS scoring & buckets
-│  ├─ risk.py                # fallback risk (partial features)
-│  ├─ rounding.py            # hourly rounding engine (nurse & CNA)
-│  └─ config.py              # reads .env for consumer
-├─ utils/
-├─ data/                     # (optional) seeds / logs
-├─ requirements.txt
-├─ .env.example
-└─ README.md
+# ├─ producers/
 
-Requirements
+# │  ├─ event_producer.py      # streams synthetic resident events (JSON)
+# │  ├─ generators.py          # synthetic data + MFS helpers
+# │  ├─ roster.py              # 30 residents + unit assignments
+# │  └─ config.py              # reads .env for producer
+# ├─ consumers/
+# │  ├─ event_consumer.py      # real-time UI (single figure)
+# │  ├─ mfs.py                 # MFS scoring & buckets
+# │  ├─ risk.py                # fallback risk (partial features)
+# │  ├─ rounding.py            # hourly rounding engine (nurse & CNA)
+# │  └─ config.py              # reads .env for consumer
+# ├─ utils/
+# ├─ data/                     # (optional) seeds / logs
+# ─ requirements.txt
+# ├─ .env.example
+# └─ README.md
+
+# Requirements
 
 Python 3.10+
 
@@ -95,7 +96,7 @@ Data model (Kafka JSON event)
 
 Each message is a single resident snapshot:
 
-``
+```json
 {
   "resident_id": "R021",
   "resident_name": "Barbara Hernandez",
@@ -133,7 +134,7 @@ Each message is a single resident snapshot:
   "unit": "U2",
   "room": "210B"
 }
-``
+```
 
 Morse Fall Scale (MFS) points
 Item	Options → Points
