@@ -1,13 +1,13 @@
 # Nursing Home Fall Risk Monitor (MFS) — Real-Time Streaming
 
-### By Albert Kabore
+## By Albert Kabore
 
 A real-time monitoring pipeline for a 30-resident nursing home that computes Morse Fall Scale (MFS) risk, raises alerts, and orchestrates hourly rounding for nurses & CNAs. Events stream over Kafka. The consumer renders one live Matplotlib figure:
 Left: Top-N residents by current risk (color-coded bars) with the raw MFS total /125 on each bar.
 
 Right: Time Watch (local time, current 8-hour shift, countdown to next rounding slot), Rounding assignments for the current slot, and Recent alerts.
 
-### ⚠️ For education only — not a medical device and not for clinical use or decision-making.
+##  ⚠️ For education only — not a medical device and not for clinical use or decision-making.
 
 Quick start (Windows / PowerShell)
 
@@ -18,8 +18,8 @@ cd Nursing-Home-Monitor-buzzline-06-kabore
 
 ### 2.	Create & activate virtual env
 
-```py -m venv .venv
-```
+py -m venv .venv
+
 
 .\.venv\Scripts\Activate.ps1
 
@@ -58,7 +58,7 @@ You’ll see:
 
 •	One live figure updating in real time.
 
-Repository layout
+# Repository layout
 
 .
 # ├─ producers/
@@ -100,7 +100,7 @@ KAFKA_BOOTSTRAP=localhost:9092
 
 KAFKA_TOPIC=fall_risk_events
 
-Visualization
+# Visualization
 
 TOP_N=6  # how many residents to display in the bar chart
 
@@ -156,7 +156,7 @@ Each message is a single resident snapshot:
 }
 ```
 
-Morse Fall Scale (MFS) points
+# Morse Fall Scale (MFS) points
 
 Item → Options → Points
 
@@ -178,7 +178,7 @@ Normalized risk: MFS / 125 (shown on bars).
 
 The consumer prefers full MFS when present; if partial, it computes a conservative risk from available drivers (see consumers/risk.py).
 
-What the consumer shows
+### What the consumer shows
 
 •	Top-N risk bars (green/orange/red) with the raw MFS/125 overlay.
 
@@ -190,7 +190,7 @@ What the consumer shows
 
 ALERT HIGH — Paul King (0.64) — history_fall/secondary_dx/gait=weak
 
-Customization
+# Customization
 
 •	Right panel width: edit PANEL_LEFT in consumers/event_consumer.py (smaller value = wider panel; e.g., 0.58).
 
@@ -202,7 +202,7 @@ Customization
 
 •	Colors / thresholds: color_for_score() and buckets in mfs.py.
 
-Troubleshooting
+# Troubleshooting
 
 •	Figure opens but no updates: ensure producer is running and Kafka is reachable. Watch consumer console throughput.
 
@@ -214,7 +214,7 @@ Troubleshooting
 
 •	Backend issues: TkAgg with fallback to Qt5Agg. Install Tk/Qt if needed.
 
-CC6.2 / CC6.3 checklist (for your submission)
+# CC6.2 / CC6.3 checklist (for your submission)
 
 ✅ Root files (requirements.txt, .gitignore, .env + example), producers/consumers/utils/data folders
 
